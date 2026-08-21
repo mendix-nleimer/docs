@@ -31,18 +31,18 @@ The Workstation domain model contains the following entities:
 
 The following section provides more information about using the Workstation nanoflows and Java actions in your Mendix application.
 
-#### SendDeviceRequest
+### SendDeviceRequest
 
 Call `SendDeviceRequest` to send a message to a device and return the response or error. Requires Workstation Client 4.0 or later, and a device that supports requests. For more information about the supported message syntax, see [Configuring Devices](/mendix-workstation/management-devices/). This action has the following parameters:
 
-* `device` 
+* `Device`: StationConnector.Device or specialization 
 * `message`
 
 ### SendDeviceMessage
 
 Call `SendDeviceMessage` to send a message to a device. For more information about the supported message syntax, see [Configuring Devices](/mendix-workstation/management-devices/). This action has the following parameters:
 
-* `device` 
+* `Device`: StationConnector.Device or specialization 
 * `message`
 
 Responses are passed through message callbacks. For more information, see `GetCreateDevice` (`onMessage`), `WaitForDeviceMessage`, and `SubscribeToDeviceMessages`.
@@ -51,7 +51,7 @@ Responses are passed through message callbacks. For more information, see `GetCr
 
 Call `WaitForDeviceMessage` to wait for a message from the connected device for the duration of the specified timeout period. This action has the following parameters:
 
-* `device` 
+* `Device`: StationConnector.Device or specialization 
 * `timeout`
 
 ### WaitForObjectChange
@@ -106,7 +106,7 @@ Call `SubscribeToObjectChanges` to trigger a nanoflow when the specified object 
 
 Call `SubscribeToDeviceMessages` to trigger a nanoflow when a message is received from a device. This action has the following parameters: 
 
-* `device`
+* `Device`: StationConnector.Device or specialization
 * `callback`
 * `applicationContext`
 
@@ -114,7 +114,7 @@ Call `SubscribeToDeviceMessages` to trigger a nanoflow when a message is receive
 
 Call `SubscribeToDeviceErrors` to trigger a nanoflow on device connection error. This action has the following parameters: 
 
-* `device`
+* `Device`: StationConnector.Device or specialization
 * `callback`
 * `applicationContext`
 
